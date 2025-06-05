@@ -1,0 +1,25 @@
+#
+# ~/.bashrc
+#
+shopt -s autocd
+
+source /usr/share/nvm/init-nvm.sh
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+source ~/fzf_app_suggest.sh
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+# bashrc
+
+# Add this lines at the top of .bashrc:
+[[ $- == *i* ]] && source /usr/share/blesh/ble.sh --noattach
+
+# your bashrc settings come here...
+
+# Add this line at the end of .bashrc:
+[[ ! ${BLE_VERSION-} ]] || ble-attach
